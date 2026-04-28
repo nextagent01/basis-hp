@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:www.next-agent.jp)",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(where python *)",
+      "Bash(where python3 *)",
+      "Bash(where py *)",
+      "Bash(python -m http.server 3456 --directory \"C:\\\\Users\\\\basis\\\\OneDrive\\\\デスクトップ\\\\claud code\")",
+      "mcp__Claude_in_Chrome__tabs_context_mcp",
+      "WebFetch(domain:shibuyastreetlive.jp)",
+      "Bash(npm --version)",
+      "Bash(pip --version)",
+      "PowerShell(winget install --id OpenJS.NodeJS.LTS -e --accept-source-agreements --accept-package-agreements)"
+    ]
+  }
+}

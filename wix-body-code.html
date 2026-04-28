@@ -1,0 +1,122 @@
+<!-- ★★★ WIX「Settings → Custom Code → Body End」に貼り付け ★★★ -->
+
+<!-- 固定LINEボタン -->
+<a id="na-line-btn" href="https://lin.ee/6amMKlG" target="_blank">
+  <svg width="18" height="18" viewBox="0 0 48 48" fill="#fff"><path d="M24 4C12.95 4 4 11.86 4 21.5c0 5.27 2.67 9.97 6.87 13.17-.3 1.1-1.95 7.08-2.02 7.5 0 0-.04.32.17.44.21.12.45.03.45.03.59-.08 6.84-4.48 8.04-5.28C18.92 37.72 21.42 38 24 38c11.05 0 20-7.86 20-17.5S35.05 4 24 4z"/></svg>
+  公式LINE登録はこちら
+</a>
+
+<!-- パーティクル -->
+<canvas id="na-particles"></canvas>
+
+<!-- カーソル -->
+<div id="na-cursor"></div>
+<div id="na-cursor-ring"></div>
+
+<!-- マーキーテープ（ヘッダー直下に自動挿入） -->
+<div id="na-marquee">
+  <div id="na-marquee-inner">
+    ✦ 副業で稼げる &nbsp;&nbsp; ✦ 空いた時間の有効活用 &nbsp;&nbsp; ✦ 有名になりたい &nbsp;&nbsp; ✦ 年間投げ銭売上10億以上 &nbsp;&nbsp; ✦ スマホ1台でOK &nbsp;&nbsp; ✦ 登録無料 &nbsp;&nbsp; ✦ ノルマなし &nbsp;&nbsp; ✦ 副業で稼げる &nbsp;&nbsp; ✦ 空いた時間の有効活用 &nbsp;&nbsp; ✦ 有名になりたい &nbsp;&nbsp; ✦ 年間投げ銭売上10億以上 &nbsp;&nbsp; ✦ スマホ1台でOK &nbsp;&nbsp; ✦ 登録無料 &nbsp;&nbsp; ✦ ノルマなし &nbsp;&nbsp;
+  </div>
+</div>
+
+<script>
+(function () {
+
+  /* ── マーキーをヘッダー直下へ移動 ── */
+  const mq = document.getElementById('na-marquee');
+  const hdr = document.querySelector('header')
+    || document.querySelector('[data-testid="header"]')
+    || document.querySelector('#SITE_HEADER');
+  if (hdr && hdr.parentNode) hdr.parentNode.insertBefore(mq, hdr.nextSibling);
+  else document.body.prepend(mq);
+
+  /* ── パーティクル ── */
+  const cv = document.getElementById('na-particles');
+  const cx = cv.getContext('2d');
+  function rs() { cv.width = innerWidth; cv.height = innerHeight; }
+  rs(); window.addEventListener('resize', rs);
+
+  const cols = ['#FF2D78','#9B2FFF','#00C8E0','#FFB800','#00C875'];
+  const pts = Array.from({ length: 50 }, () => ({
+    x: Math.random() * innerWidth, y: Math.random() * innerHeight,
+    r: Math.random() * 2 + .5,
+    vx: (Math.random() - .5) * .4, vy: (Math.random() - .5) * .4,
+    c: cols[Math.floor(Math.random() * cols.length)],
+    a: Math.random() * .2 + .07
+  }));
+  (function loop() {
+    cx.clearRect(0, 0, cv.width, cv.height);
+    pts.forEach(p => {
+      p.x += p.vx; p.y += p.vy;
+      if (p.x < 0) p.x = cv.width; if (p.x > cv.width) p.x = 0;
+      if (p.y < 0) p.y = cv.height; if (p.y > cv.height) p.y = 0;
+      cx.beginPath(); cx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      cx.fillStyle = p.c; cx.globalAlpha = p.a;
+      cx.shadowBlur = 10; cx.shadowColor = p.c;
+      cx.fill(); cx.globalAlpha = 1; cx.shadowBlur = 0;
+    });
+    requestAnimationFrame(loop);
+  })();
+
+  /* ── カスタムカーソル（PCのみ） ── */
+  if (window.innerWidth > 768) {
+    const cur = document.getElementById('na-cursor');
+    const ring = document.getElementById('na-cursor-ring');
+    let rx = 0, ry = 0;
+    document.addEventListener('mousemove', e => {
+      cur.style.left = e.clientX + 'px'; cur.style.top = e.clientY + 'px';
+      rx += (e.clientX - rx) * .12; ry += (e.clientY - ry) * .12;
+    });
+    (function anim() { ring.style.left = rx + 'px'; ring.style.top = ry + 'px'; requestAnimationFrame(anim); })();
+  }
+
+  /* ── スクロールフェードイン ── */
+  const fo = new IntersectionObserver(es => {
+    es.forEach(e => { if (e.isIntersecting) e.target.classList.add('na-visible'); });
+  }, { threshold: .1 });
+  document.querySelectorAll('.na-fade').forEach(el => fo.observe(el));
+
+  /* ── カウンターアニメ ── */
+  const co = new IntersectionObserver(es => {
+    es.forEach(e => {
+      if (!e.isIntersecting) return;
+      const el = e.target, t = +el.dataset.target;
+      if (!t) return;
+      let n = 0, step = Math.ceil(t / 60);
+      const tmr = setInterval(() => {
+        n = Math.min(n + step, t); el.textContent = n;
+        if (n >= t) clearInterval(tmr);
+      }, 22);
+      co.unobserve(el);
+    });
+  }, { threshold: .5 });
+  document.querySelectorAll('.na-counter').forEach(el => co.observe(el));
+
+  /* ── タイプライター（id="na-tw" の要素に適用） ── */
+  const twEl = document.getElementById('na-tw');
+  if (twEl) {
+    const phrases = [
+      'スマホ1台で、新しい人生を始めよう',
+      '副業で毎月安定収入を手に入れよう',
+      '空いた時間を最大限に活用しよう',
+      '有名になりたいあなたを全力サポート',
+    ];
+    let pi = 0, ci = 0, del = false;
+    function tl() {
+      const c = phrases[pi];
+      if (!del) {
+        twEl.textContent = c.slice(0, ++ci);
+        if (ci === c.length) { del = true; setTimeout(tl, 2000); return; }
+        setTimeout(tl, 70);
+      } else {
+        twEl.textContent = c.slice(0, --ci);
+        if (ci === 0) { del = false; pi = (pi + 1) % phrases.length; }
+        setTimeout(tl, 35);
+      }
+    }
+    setTimeout(tl, 600);
+  }
+
+})();
+</script>
