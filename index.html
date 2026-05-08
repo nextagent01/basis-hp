@@ -547,6 +547,125 @@
       .photo-grid-3{grid-template-rows:150px 150px;}
     }
 
+    /* ===== 代表挨拶 ===== */
+    #greeting{
+      padding:120px 0;
+      background:var(--dark);
+    }
+    .greeting-grid{
+      display:grid;grid-template-columns:380px 1fr;gap:80px;align-items:center;
+    }
+    .greeting-photo{
+      position:relative;
+    }
+    .greeting-photo-frame{
+      border-radius:24px;overflow:hidden;
+      aspect-ratio:3/4;
+      background:linear-gradient(135deg,#12102A,#1A1A38);
+      border:1px solid rgba(201,168,76,.2);
+      display:flex;align-items:center;justify-content:center;
+      font-size:80px;
+      position:relative;
+    }
+    .greeting-photo-frame img{
+      width:100%;height:100%;object-fit:cover;
+      display:block;
+    }
+    .greeting-name-card{
+      position:absolute;bottom:-20px;left:20px;right:20px;
+      background:linear-gradient(135deg,rgba(201,168,76,.15),rgba(123,79,255,.1));
+      backdrop-filter:blur(12px);
+      border:1px solid rgba(201,168,76,.25);
+      border-radius:16px;padding:16px 20px;
+      text-align:center;
+    }
+    .greeting-name{font-size:20px;font-weight:700;letter-spacing:.08em;}
+    .greeting-title{font-size:11px;color:var(--gold);letter-spacing:.15em;margin-top:4px;}
+    .greeting-content{padding-top:24px;}
+    .greeting-quote{
+      font-size:clamp(20px,3vw,32px);
+      font-weight:700;line-height:1.7;
+      margin-bottom:32px;
+      border-left:3px solid var(--gold);
+      padding-left:24px;
+    }
+    .greeting-quote em{font-style:normal;color:var(--gold2);}
+    .greeting-body{
+      font-size:14px;color:rgba(255,255,255,.65);
+      line-height:2.2;
+    }
+    .greeting-sig{
+      margin-top:32px;
+      font-size:13px;color:rgba(255,255,255,.5);
+      letter-spacing:.08em;
+    }
+    .greeting-sig strong{color:var(--white);font-size:16px;display:block;margin-top:6px;}
+    @media(max-width:900px){
+      .greeting-grid{grid-template-columns:1fr;gap:60px;}
+      .greeting-photo-frame{aspect-ratio:4/3;max-height:320px;}
+    }
+
+    /* ===== ダンス実績 ===== */
+    #dance-results{
+      padding:100px 0;
+      background:linear-gradient(180deg,var(--dark) 0%,#0D0820 100%);
+      border-top:1px solid rgba(123,79,255,.15);
+    }
+    .results-header{text-align:center;margin-bottom:64px;}
+    .results-stats{
+      display:grid;grid-template-columns:repeat(4,1fr);gap:20px;
+      margin-bottom:60px;
+    }
+    .result-stat{
+      background:rgba(255,255,255,.03);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:20px;padding:32px 20px;text-align:center;
+      transition:border-color .3s,transform .3s,background .3s;
+      position:relative;overflow:hidden;
+    }
+    .result-stat::before{
+      content:'';position:absolute;inset:0;
+      background:linear-gradient(135deg,rgba(123,79,255,.06),transparent);
+      opacity:0;transition:opacity .3s;
+    }
+    .result-stat:hover{border-color:rgba(123,79,255,.4);transform:translateY(-6px);background:rgba(123,79,255,.05);}
+    .result-stat:hover::before{opacity:1;}
+    .result-num{
+      font-family:'Bebas Neue',sans-serif;
+      font-size:clamp(40px,5vw,60px);
+      background:linear-gradient(135deg,var(--gold),var(--gold2));
+      -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+      line-height:1;margin-bottom:8px;
+    }
+    .result-unit{font-size:18px;}
+    .result-label{font-size:12px;color:rgba(255,255,255,.5);letter-spacing:.08em;line-height:1.6;}
+    .results-achievements{
+      display:grid;grid-template-columns:repeat(3,1fr);gap:16px;
+    }
+    .achievement-card{
+      background:rgba(255,255,255,.03);
+      border:1px solid rgba(255,255,255,.07);
+      border-radius:16px;padding:24px;
+      display:flex;gap:16px;align-items:flex-start;
+      transition:border-color .3s,transform .3s;
+    }
+    .achievement-card:hover{border-color:rgba(201,168,76,.25);transform:translateY(-4px);}
+    .achievement-icon{
+      font-size:28px;flex-shrink:0;
+      width:48px;height:48px;
+      background:rgba(201,168,76,.08);
+      border-radius:12px;display:flex;align-items:center;justify-content:center;
+    }
+    .achievement-text h4{font-size:14px;font-weight:700;margin-bottom:6px;}
+    .achievement-text p{font-size:12px;color:rgba(255,255,255,.5);line-height:1.7;}
+    @media(max-width:900px){
+      .results-stats{grid-template-columns:repeat(2,1fr);}
+      .results-achievements{grid-template-columns:1fr 1fr;}
+    }
+    @media(max-width:600px){
+      .results-achievements{grid-template-columns:1fr;}
+    }
+
     /* ===== MARQUEE ===== */
     .marquee-section{
       padding:40px 0;overflow:hidden;
@@ -743,6 +862,7 @@
   <a href="#" class="nav-logo"><img src="logo.png" alt="株式会社BASIS"></a>
   <ul class="nav-links">
     <li><a href="#about">理念</a></li>
+    <li><a href="#greeting">代表挨拶</a></li>
     <li><a href="#business">事業</a></li>
     <li><a href="#dance">ダンス</a></li>
     <li><a href="#apparel">アパレル</a></li>
@@ -878,6 +998,39 @@
   </div>
 </section>
 
+<!-- ===== 代表挨拶 ===== -->
+<section id="greeting">
+  <div class="section-inner">
+    <div class="greeting-grid">
+      <div class="greeting-photo reveal-left">
+        <div class="greeting-photo-frame">
+          <span>👤</span>
+        </div>
+        <div class="greeting-name-card">
+          <div class="greeting-name">大原 浩司</div>
+          <div class="greeting-title">代表取締役 CEO</div>
+        </div>
+      </div>
+      <div class="greeting-content reveal-right">
+        <p class="section-label">GREETING / 代表挨拶</p>
+        <div class="greeting-quote">
+          エンターテイメントは、<br>
+          <em>人生を変える力</em>を持っている。
+        </div>
+        <p class="greeting-body">
+          はじめまして。株式会社BASIS代表取締役の大原浩司と申します。<br><br>
+          私がこの会社を立ち上げたのは、エンターテイメントが持つ「人の人生を豊かにする力」を、もっと多くの人に届けたいという想いからでした。ダンスで自己表現を身につけた子どもが自信を持って歩む姿、自分のブランドを立ち上げた若者の目が輝く瞬間、ライブ配信で好きなことを仕事にできた喜びの声——そのひとつひとつが、私たちの原動力です。<br><br>
+          BASISはまだ成長途中の会社ですが、「選択肢をさらに広げる」という理念のもと、スタッフ一同が情熱を持って取り組んでいます。エンターテイメントの可能性を信じ、一緒に挑戦してくださる方々とともに、これからも歩んでいきたいと思います。
+        </p>
+        <div class="greeting-sig">
+          株式会社BASIS
+          <strong>代表取締役　大原 浩司</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ===== BUSINESS OVERVIEW ===== -->
 <section id="business">
   <div class="section-inner">
@@ -977,6 +1130,78 @@
           <li>バックダンサー・ステージパフォーマンス</li>
         </ul>
         <a href="#contact" class="btn-primary">詳細を問い合わせる</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ダンス実績 ===== -->
+<section id="dance-results">
+  <div class="section-inner">
+    <div class="results-header reveal">
+      <p class="section-label">DANCE ACHIEVEMENTS</p>
+      <h2 class="section-title">ダンス事業部の実績</h2>
+    </div>
+    <div class="results-stats">
+      <div class="result-stat reveal" style="transition-delay:.1s">
+        <div class="result-num count-up" data-target="500">0</div>
+        <div class="result-label">累計指導人数</div>
+      </div>
+      <div class="result-stat reveal" style="transition-delay:.2s">
+        <div class="result-num count-up" data-target="10">0</div>
+        <div class="result-label">連携教育機関数</div>
+      </div>
+      <div class="result-stat reveal" style="transition-delay:.3s">
+        <div class="result-num count-up" data-target="50">0</div>
+        <div class="result-label">振り付け提供実績</div>
+      </div>
+      <div class="result-stat reveal" style="transition-delay:.4s">
+        <div class="result-num count-up" data-target="30">0</div>
+        <div class="result-label">コラボ・出演実績</div>
+      </div>
+    </div>
+    <div class="results-achievements">
+      <div class="achievement-card reveal" style="transition-delay:.1s">
+        <div class="achievement-icon">🏆</div>
+        <div class="achievement-text">
+          <h4>全国大会出場</h4>
+          <p>スタジオ生徒が全国規模のダンスコンテストに複数出場。入賞実績あり。</p>
+        </div>
+      </div>
+      <div class="achievement-card reveal" style="transition-delay:.2s">
+        <div class="achievement-icon">📺</div>
+        <div class="achievement-text">
+          <h4>TV・YouTube振り付け</h4>
+          <p>テレビ番組やYouTubeチャンネルへの振り付け提供。幅広いメディアで活躍。</p>
+        </div>
+      </div>
+      <div class="achievement-card reveal" style="transition-delay:.3s">
+        <div class="achievement-icon">🌟</div>
+        <div class="achievement-text">
+          <h4>インフルエンサーコラボ</h4>
+          <p>人気インフルエンサーやアーティストとのコラボレーション多数実績。</p>
+        </div>
+      </div>
+      <div class="achievement-card reveal" style="transition-delay:.4s">
+        <div class="achievement-icon">🏫</div>
+        <div class="achievement-text">
+          <h4>教育機関との連携</h4>
+          <p>小中学校・高校でのダンス授業を担当。ダンス必修化にも対応した指導実績。</p>
+        </div>
+      </div>
+      <div class="achievement-card reveal" style="transition-delay:.5s">
+        <div class="achievement-icon">🎤</div>
+        <div class="achievement-text">
+          <h4>バックダンサー派遣</h4>
+          <p>ライブイベントや舞台へのバックダンサー派遣。プロとして活躍できる環境。</p>
+        </div>
+      </div>
+      <div class="achievement-card reveal" style="transition-delay:.6s">
+        <div class="achievement-icon">💃</div>
+        <div class="achievement-text">
+          <h4>スタジオ運営</h4>
+          <p>大阪・豊中を拠点に複数クラスを展開。キッズから大人まで幅広い層に対応。</p>
+        </div>
       </div>
     </div>
   </div>
