@@ -822,6 +822,115 @@
       .footer-grid{grid-template-columns:1fr;gap:36px;}
     }
 
+    /* ===== ☀️ LIGHT SKY THEME OVERRIDE ===== */
+    :root{
+      --sky-a: #1A7FD4;
+      --text:  #0F2A42;
+      --text-m:#3A6080;
+      --text-l:#6A90AA;
+    }
+    html{
+      background:linear-gradient(170deg,#5BB8F5 0%,#87CEEB 20%,#B8DFFF 45%,#D8F0FF 65%,#EEF8FF 85%,#F8FCFF 100%);
+      min-height:100%;
+    }
+    body{background:transparent !important;color:var(--text) !important;}
+
+    /* nav */
+    nav{background:transparent !important;}
+    nav.scrolled{
+      background:rgba(255,255,255,.85) !important;
+      box-shadow:0 1px 0 rgba(58,143,232,.18) !important;
+    }
+    .nav-links a{color:rgba(15,42,66,.75) !important;}
+    .nav-links a:hover{color:var(--sky-a) !important;}
+    .nav-links a::after{background:var(--sky-a) !important;}
+    .nav-hamburger span{background:var(--text) !important;}
+    .mobile-menu{background:rgba(255,255,255,.97) !important;border-left:1px solid rgba(58,143,232,.2) !important;}
+    .mobile-menu a{color:rgba(15,42,66,.8) !important;border-bottom-color:rgba(15,42,66,.08) !important;}
+    .mobile-menu a:hover{color:var(--sky-a) !important;}
+    .mobile-menu-close{color:var(--text) !important;}
+
+    /* hero はそのまま白テキストでOK（空青背景に映える） */
+
+    /* section共通 */
+    .section-title{color:var(--text) !important;}
+    .section-desc{color:var(--text-m) !important;}
+
+    /* about */
+    #about{background:rgba(255,255,255,.18) !important;}
+    .about-card{
+      background:rgba(255,255,255,.65) !important;
+      border-color:rgba(58,143,232,.22) !important;
+      backdrop-filter:blur(12px);
+    }
+    .philosophy-text{color:var(--text) !important;}
+    .stat-item{background:rgba(255,255,255,.6) !important;border-color:rgba(58,143,232,.15) !important;}
+    .stat-label{color:var(--text-m) !important;}
+
+    /* greeting */
+    #greeting{background:rgba(255,255,255,.15) !important;}
+    .greeting-photo-frame{background:linear-gradient(135deg,#C0E4FF,#90CCFF) !important;border-color:rgba(58,143,232,.25) !important;}
+    .greeting-name-card{background:rgba(255,255,255,.85) !important;border-color:rgba(58,143,232,.3) !important;}
+    .greeting-name{color:var(--text) !important;}
+    .greeting-body{color:var(--text-m) !important;}
+    .greeting-sig{color:var(--text-l) !important;}
+    .greeting-sig strong{color:var(--text) !important;}
+
+    /* business */
+    #business{background:rgba(210,240,255,.25) !important;}
+    .biz-card{background:rgba(255,255,255,.72) !important;border-color:rgba(58,143,232,.14) !important;backdrop-filter:blur(8px);}
+    .biz-card:hover{box-shadow:0 40px 80px rgba(58,143,232,.18) !important;}
+    .biz-title{color:var(--text) !important;}
+    .biz-desc{color:var(--text-m) !important;}
+    .biz-tag{background:rgba(58,143,232,.08) !important;border-color:rgba(58,143,232,.18) !important;color:var(--text-m) !important;}
+    .biz-card-badge{background:rgba(255,255,255,.8) !important;color:var(--sky-a) !important;}
+
+    /* detail sections */
+    .detail-section{border-top-color:rgba(58,143,232,.1) !important;}
+    .detail-section:nth-child(even){background:rgba(255,255,255,.22) !important;}
+    .detail-section:nth-child(odd){background:rgba(220,244,255,.2) !important;}
+    .detail-list li{color:var(--text-m) !important;}
+
+    /* dance results */
+    #dance-results{background:rgba(200,235,255,.3) !important;border-top-color:rgba(58,143,232,.15) !important;}
+    .result-stat{background:rgba(255,255,255,.6) !important;border-color:rgba(58,143,232,.13) !important;}
+    .result-stat::before{background:linear-gradient(135deg,rgba(58,143,232,.08),transparent) !important;}
+    .result-stat:hover{background:rgba(255,255,255,.9) !important;border-color:rgba(58,143,232,.4) !important;}
+    .result-label{color:var(--text-m) !important;}
+    .achievement-card{background:rgba(255,255,255,.6) !important;border-color:rgba(58,143,232,.1) !important;}
+    .achievement-card:hover{border-color:rgba(58,143,232,.35) !important;}
+    .achievement-icon{background:rgba(58,143,232,.08) !important;}
+    .achievement-text h4{color:var(--text) !important;}
+    .achievement-text p{color:var(--text-m) !important;}
+
+    /* marquee */
+    .marquee-section{background:rgba(255,255,255,.3) !important;border-color:rgba(58,143,232,.18) !important;}
+    .marquee-track span{color:rgba(15,42,66,.3) !important;}
+    .marquee-track span.highlight{color:var(--sky-a) !important;opacity:.8 !important;}
+
+    /* company */
+    #company{background:rgba(255,255,255,.18) !important;}
+    .company-table tr{border-bottom-color:rgba(58,143,232,.13) !important;}
+    .company-table td:last-child{color:var(--text-m) !important;}
+    .company-map{border-color:rgba(58,143,232,.2) !important;background:rgba(255,255,255,.5) !important;}
+
+    /* contact */
+    #contact{background:rgba(200,235,255,.25) !important;}
+    .contact-card{background:rgba(255,255,255,.65) !important;border-color:rgba(58,143,232,.25) !important;backdrop-filter:blur(12px);}
+    .contact-text{color:var(--text-m) !important;}
+    .contact-address{color:var(--text-l) !important;}
+
+    /* footer */
+    footer{background:rgba(10,40,70,.92) !important;border-top-color:rgba(255,255,255,.06) !important;}
+    .footer-brand p{color:rgba(255,255,255,.45) !important;}
+    .footer-col h4{color:rgba(255,255,255,.55) !important;}
+    .footer-col ul a{color:rgba(255,255,255,.4) !important;}
+    .footer-col ul a:hover{color:var(--gold) !important;}
+    .footer-bottom p{color:rgba(255,255,255,.25) !important;}
+
+    /* progress bar */
+    #progress{background:linear-gradient(to right,var(--sky-a),#5BB8F5) !important;}
+
     /* ===== floating shapes ===== */
     .float-shape{
       position:absolute;border-radius:50%;
@@ -1433,9 +1542,9 @@ class Pt{
     this.vy=(Math.random()-.5)*.25;
     this.a=Math.random()*.5+.1;
     const c=Math.random();
-    if(c<.33) this.col='201,168,76';
-    else if(c<.66) this.col='91,184,245';
-    else this.col='168,228,255';
+    if(c<.33) this.col='255,255,255';
+    else if(c<.66) this.col='201,168,76';
+    else this.col='255,255,255';
   }
   update(){
     this.x+=this.vx; this.y+=this.vy;
