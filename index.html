@@ -11,15 +11,15 @@
     :root {
       --gold:    #C9A84C;
       --gold2:   #F0D080;
-      --dark:    #0A0A0F;
-      --dark2:   #111118;
-      --dark3:   #1A1A28;
+      --dark:    #06101E;
+      --dark2:   #091828;
+      --dark3:   #0D2038;
       --white:   #FFFFFF;
-      --gray:    #888899;
-      --light:   #F4F4F8;
-      --accent1: #7B4FFF;
-      --accent2: #FF4F9A;
-      --accent3: #4FFFCE;
+      --gray:    #8899AA;
+      --light:   #E8F4FF;
+      --accent1: #3A8FE8;
+      --accent2: #5BC4FF;
+      --accent3: #A8E4FF;
     }
     *{margin:0;padding:0;box-sizing:border-box;}
     html{scroll-behavior:smooth;}
@@ -160,7 +160,7 @@
     }
     .hero-bg-video{
       position:absolute;inset:0;
-      background:linear-gradient(135deg,#0A0A0F 0%,#12102A 40%,#1A0A1A 70%,#0A0F12 100%);
+      background:linear-gradient(160deg,#020C1A 0%,#063060 30%,#0A5A9A 60%,#1A8AD4 85%,#5BB8F5 100%);
       z-index:0;
     }
     .hero-noise{
@@ -172,9 +172,9 @@
       position:absolute;border-radius:50%;
       filter:blur(120px);z-index:2;pointer-events:none;
     }
-    .hero-orb1{width:600px;height:600px;background:rgba(123,79,255,.18);top:-100px;left:-100px;}
-    .hero-orb2{width:500px;height:500px;background:rgba(201,168,76,.12);bottom:-50px;right:-80px;}
-    .hero-orb3{width:400px;height:400px;background:rgba(255,79,154,.1);top:30%;left:55%;}
+    .hero-orb1{width:600px;height:600px;background:rgba(91,184,245,.22);top:-100px;left:-100px;}
+    .hero-orb2{width:500px;height:500px;background:rgba(201,168,76,.15);bottom:-50px;right:-80px;}
+    .hero-orb3{width:400px;height:400px;background:rgba(168,228,255,.18);top:30%;left:55%;}
     .hero-content{
       position:relative;z-index:10;
       text-align:center;
@@ -608,8 +608,8 @@
     /* ===== ダンス実績 ===== */
     #dance-results{
       padding:100px 0;
-      background:linear-gradient(180deg,var(--dark) 0%,#0D0820 100%);
-      border-top:1px solid rgba(123,79,255,.15);
+      background:linear-gradient(180deg,var(--dark) 0%,#061828 100%);
+      border-top:1px solid rgba(58,143,232,.15);
     }
     .results-header{text-align:center;margin-bottom:64px;}
     .results-stats{
@@ -669,9 +669,9 @@
     /* ===== MARQUEE ===== */
     .marquee-section{
       padding:40px 0;overflow:hidden;
-      background:linear-gradient(to right,rgba(201,168,76,.05),rgba(123,79,255,.05));
-      border-top:1px solid rgba(201,168,76,.1);
-      border-bottom:1px solid rgba(201,168,76,.1);
+      background:linear-gradient(to right,rgba(58,143,232,.08),rgba(91,184,245,.06));
+      border-top:1px solid rgba(91,184,245,.15);
+      border-bottom:1px solid rgba(91,184,245,.15);
     }
     .marquee-track{
       display:flex;gap:60px;white-space:nowrap;
@@ -1434,8 +1434,8 @@ class Pt{
     this.a=Math.random()*.5+.1;
     const c=Math.random();
     if(c<.33) this.col='201,168,76';
-    else if(c<.66) this.col='123,79,255';
-    else this.col='79,255,206';
+    else if(c<.66) this.col='91,184,245';
+    else this.col='168,228,255';
   }
   update(){
     this.x+=this.vx; this.y+=this.vy;
@@ -1461,7 +1461,7 @@ function anim(){
         ctx.beginPath();
         ctx.moveTo(pts[i].x,pts[i].y);
         ctx.lineTo(pts[j].x,pts[j].y);
-        ctx.strokeStyle=`rgba(201,168,76,${(1-d/100)*.06})`;
+        ctx.strokeStyle=`rgba(91,184,245,${(1-d/100)*.08})`;
         ctx.lineWidth=.5;
         ctx.stroke();
       }
