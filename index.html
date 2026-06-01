@@ -376,7 +376,7 @@
     .business-header{text-align:center;margin-bottom:80px;}
     .business-header .section-desc{margin:0 auto;}
     .business-grid{
-      display:grid;grid-template-columns:repeat(3,1fr);gap:28px;
+      display:grid;grid-template-columns:repeat(4,1fr);gap:28px;
     }
     .biz-card{
       position:relative;overflow:hidden;border-radius:24px;
@@ -444,8 +444,9 @@
     .biz-card:nth-child(1) .biz-card-line{background:linear-gradient(to right,var(--accent1),var(--accent2));}
     .biz-card:nth-child(2) .biz-card-line{background:linear-gradient(to right,var(--accent3),var(--accent1));}
     .biz-card:nth-child(3) .biz-card-line{background:linear-gradient(to right,var(--accent2),var(--gold));}
-    @media(max-width:900px){
-      .business-grid{grid-template-columns:1fr 1fr;}
+    .biz-card:nth-child(4) .biz-card-line{background:linear-gradient(to right,var(--gold),var(--gold2));}
+    @media(max-width:1100px){
+      .business-grid{grid-template-columns:repeat(2,1fr);}
     }
     @media(max-width:600px){
       .business-grid{grid-template-columns:1fr;}
@@ -976,6 +977,7 @@
     <li><a href="#dance">ダンス</a></li>
     <li><a href="#apparel">アパレル</a></li>
     <li><a href="#live">ライブ配信</a></li>
+    <li><a href="#influencer">インフルエンサー</a></li>
     <li><a href="#company">会社情報</a></li>
   </ul>
   <a href="#contact" class="nav-cta">お問い合わせ</a>
@@ -992,6 +994,7 @@
   <a href="#dance" onclick="toggleMenu()">ダンス事業部</a>
   <a href="#apparel" onclick="toggleMenu()">アパレル事業部</a>
   <a href="#live" onclick="toggleMenu()">ライブ配信事業部</a>
+  <a href="#influencer" onclick="toggleMenu()">インフルエンサー事業部</a>
   <a href="#company" onclick="toggleMenu()">会社情報</a>
   <a href="#contact" onclick="toggleMenu()">お問い合わせ</a>
 </div>
@@ -1074,7 +1077,7 @@
           </p>
           <div class="about-stats">
             <div class="stat-item">
-              <div class="stat-num count-up" data-target="3">0</div>
+              <div class="stat-num count-up" data-target="4">0</div>
               <div class="stat-label">事業部門</div>
             </div>
             <div class="stat-item">
@@ -1201,6 +1204,23 @@
           </div>
         </div>
       </div>
+      <div class="biz-card reveal" style="transition-delay:.4s">
+        <div class="biz-card-line"></div>
+        <div class="biz-card-img">
+          <div class="biz-card-img-inner">✨</div>
+          <span class="biz-card-badge">INFLUENCER</span>
+        </div>
+        <div class="biz-card-body">
+          <div class="biz-num">04</div>
+          <h3 class="biz-title">インフルエンサー事業部</h3>
+          <p class="biz-desc">SNSで輝く才能を発掘・育成。フォロワー獲得からブランドとのタイアップまで、影響力を最大化。</p>
+          <div class="biz-tags">
+            <span class="biz-tag">SNS運用</span>
+            <span class="biz-tag">タイアップ</span>
+            <span class="biz-tag">マネジメント</span>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -1237,6 +1257,42 @@
           <li>TV・YOUTUBEへの振り付け提供</li>
           <li>インフルエンサーとのコラボレーション</li>
           <li>バックダンサー・ステージパフォーマンス</li>
+        </ul>
+        <a href="#contact" class="btn-primary">詳細を問い合わせる</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== INFLUENCER DETAIL ===== -->
+<section id="influencer" class="detail-section">
+  <div class="section-inner">
+    <div class="detail-grid reverse">
+      <div class="reveal-right">
+        <div class="photo-grid-3">
+          <div class="pg pg-wide">
+            <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?auto=format&fit=crop&w=900&q=85" alt="インフルエンサー">
+          </div>
+          <div class="pg">
+            <img src="https://images.unsplash.com/photo-1616469829581-73993eb86b02?auto=format&fit=crop&w=500&q=85" alt="SNS運用">
+          </div>
+          <div class="pg">
+            <img src="https://images.unsplash.com/photo-1533750349088-cd871a92f312?auto=format&fit=crop&w=500&q=85" alt="コンテンツ制作">
+          </div>
+        </div>
+      </div>
+      <div class="detail-content reveal-left">
+        <span class="section-label">INFLUENCER DIVISION / 04</span>
+        <h2 class="section-title">あなたの影響力を、<br>最大限に引き出す</h2>
+        <p class="section-desc">
+          SNSで自分を表現したい方、すでに発信しているがさらに伸ばしたい方を全力でサポート。BASISのネットワークを活かしてブランドや企業とのタイアップにも繋げます。
+        </p>
+        <ul class="detail-list">
+          <li>TikTok・Instagram・YouTubeなどSNS運用サポート</li>
+          <li>コンテンツ企画・撮影・編集のサポート</li>
+          <li>フォロワー獲得・エンゲージメント向上の戦略立案</li>
+          <li>企業・ブランドとのタイアップ案件のマッチング</li>
+          <li>インフルエンサーとしてのマネジメントサポート</li>
         </ul>
         <a href="#contact" class="btn-primary">詳細を問い合わせる</a>
       </div>
@@ -1476,6 +1532,7 @@
         <li><a href="#dance">ダンス事業部</a></li>
         <li><a href="#apparel">アパレル事業部</a></li>
         <li><a href="#live">ライブ配信事業部</a></li>
+        <li><a href="#influencer">インフルエンサー事業部</a></li>
       </ul>
     </div>
     <div class="footer-col">
