@@ -897,15 +897,35 @@
     /* ===== ☀️ LIGHT SKY THEME OVERRIDE ===== */
     :root{
       --sky-a: #1A7FD4;
-      --text:  #0F2A42;
-      --text-m:#3A6080;
-      --text-l:#6A90AA;
+      --text:  #111111;
+      --text-m:#222222;
+      --text-l:#444444;
     }
     html{
       background:linear-gradient(170deg,#5BB8F5 0%,#87CEEB 20%,#B8DFFF 45%,#D8F0FF 65%,#EEF8FF 85%,#F8FCFF 100%);
       min-height:100%;
     }
-    body{background:transparent !important;color:var(--text) !important;}
+    body{
+      background:transparent !important;
+      color:#111111 !important;
+      text-align:center;
+    }
+    /* 左揃えを維持する要素 */
+    .company-table td,
+    .detail-list,
+    .detail-list li,
+    .greeting-body,
+    .greeting-sig,
+    .biz-desc,
+    .footer-grid,
+    .footer-col ul,
+    .footer-bottom,
+    .influencer-cards,
+    .influencer-card,
+    .achievement-text p,
+    .achievement-text h4{
+      text-align:left;
+    }
 
     /* nav */
     nav{background:transparent !important;}
@@ -925,8 +945,9 @@
     /* hero はそのまま白テキストでOK（空青背景に映える） */
 
     /* section共通 */
-    .section-title{color:var(--text) !important;}
-    .section-desc{color:var(--text-m) !important;}
+    .section-title{color:#111111 !important;}
+    .section-desc{color:#222222 !important;}
+    .section-label{color:var(--gold) !important;}
 
     /* about */
     #about{background:rgba(255,255,255,.18) !important;}
@@ -935,7 +956,7 @@
       border-color:rgba(58,143,232,.22) !important;
       backdrop-filter:blur(12px);
     }
-    .philosophy-text{color:var(--text) !important;}
+    .philosophy-text{color:#111111 !important;}
     .stat-item{background:rgba(255,255,255,.6) !important;border-color:rgba(58,143,232,.15) !important;}
     .stat-label{color:var(--text-m) !important;}
 
@@ -943,17 +964,17 @@
     #greeting{background:rgba(255,255,255,.15) !important;}
     .greeting-photo-frame{background:linear-gradient(135deg,#C0E4FF,#90CCFF) !important;border-color:rgba(58,143,232,.25) !important;}
     .greeting-name-card{background:rgba(255,255,255,.85) !important;border-color:rgba(58,143,232,.3) !important;}
-    .greeting-name{color:var(--text) !important;}
-    .greeting-body{color:var(--text-m) !important;}
-    .greeting-sig{color:var(--text-l) !important;}
-    .greeting-sig strong{color:var(--text) !important;}
+    .greeting-name{color:#111111 !important;}
+    .greeting-body{color:#222222 !important;}
+    .greeting-sig{color:#444444 !important;}
+    .greeting-sig strong{color:#111111 !important;}
 
     /* business */
     #business{background:rgba(210,240,255,.25) !important;}
     .biz-card{background:rgba(255,255,255,.72) !important;border-color:rgba(58,143,232,.14) !important;backdrop-filter:blur(8px);}
     .biz-card:hover{box-shadow:0 40px 80px rgba(58,143,232,.18) !important;}
-    .biz-title{color:var(--text) !important;}
-    .biz-desc{color:var(--text-m) !important;}
+    .biz-title{color:#111111 !important;}
+    .biz-desc{color:#222222 !important;}
     .biz-tag{background:rgba(58,143,232,.08) !important;border-color:rgba(58,143,232,.18) !important;color:var(--text-m) !important;}
     .biz-card-badge{background:rgba(255,255,255,.8) !important;color:var(--sky-a) !important;}
 
@@ -961,19 +982,19 @@
     .detail-section{border-top-color:rgba(58,143,232,.1) !important;}
     .detail-section:nth-child(even){background:rgba(255,255,255,.22) !important;}
     .detail-section:nth-child(odd){background:rgba(220,244,255,.2) !important;}
-    .detail-list li{color:var(--text-m) !important;}
+    .detail-list li{color:#222222 !important;}
 
     /* dance results */
     #dance-results{background:rgba(200,235,255,.3) !important;border-top-color:rgba(58,143,232,.15) !important;}
     .result-stat{background:rgba(255,255,255,.6) !important;border-color:rgba(58,143,232,.13) !important;}
     .result-stat::before{background:linear-gradient(135deg,rgba(58,143,232,.08),transparent) !important;}
     .result-stat:hover{background:rgba(255,255,255,.9) !important;border-color:rgba(58,143,232,.4) !important;}
-    .result-label{color:var(--text-m) !important;}
+    .result-label{color:#222222 !important;}
     .achievement-card{background:rgba(255,255,255,.6) !important;border-color:rgba(58,143,232,.1) !important;}
     .achievement-card:hover{border-color:rgba(58,143,232,.35) !important;}
     .achievement-icon{background:rgba(58,143,232,.08) !important;}
-    .achievement-text h4{color:var(--text) !important;}
-    .achievement-text p{color:var(--text-m) !important;}
+    .achievement-text h4{color:#111111 !important;}
+    .achievement-text p{color:#222222 !important;}
 
     /* marquee */
     .marquee-section{background:rgba(255,255,255,.3) !important;border-color:rgba(58,143,232,.18) !important;}
@@ -983,14 +1004,14 @@
     /* company */
     #company{background:rgba(255,255,255,.18) !important;}
     .company-table tr{border-bottom-color:rgba(58,143,232,.13) !important;}
-    .company-table td:last-child{color:var(--text-m) !important;}
+    .company-table td:last-child{color:#222222 !important;}
     .company-map{border-color:rgba(58,143,232,.2) !important;background:rgba(255,255,255,.5) !important;}
 
     /* contact */
     #contact{background:rgba(200,235,255,.25) !important;}
     .contact-card{background:rgba(255,255,255,.65) !important;border-color:rgba(58,143,232,.25) !important;backdrop-filter:blur(12px);}
-    .contact-text{color:var(--text-m) !important;}
-    .contact-address{color:var(--text-l) !important;}
+    .contact-text{color:#222222 !important;}
+    .contact-address{color:#444444 !important;}
 
     /* footer */
     footer{background:rgba(10,40,70,.92) !important;border-top-color:rgba(255,255,255,.06) !important;}
