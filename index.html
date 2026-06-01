@@ -823,6 +823,11 @@
       .footer-grid{grid-template-columns:1fr;gap:36px;}
     }
 
+    .sp-break{display:inline;}
+    @media(max-width:768px){
+      .sp-break{display:block;}
+    }
+
     /* ===== 事業部大見出し ===== */
     .division-heading{
       text-align:center;
@@ -1414,7 +1419,7 @@
   <div class="section-inner">
     <div class="division-heading reveal">
       <span class="division-num">DIVISION 02</span>
-      <h2>インフルエンサー事業部</h2>
+      <h2>インフルエンサー<span class="sp-break">事業部</span></h2>
     </div>
     <div class="detail-grid reverse">
       <div class="reveal-right">
