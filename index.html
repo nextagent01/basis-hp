@@ -244,6 +244,29 @@
       border:none;cursor:pointer;
     }
     .btn-primary:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(201,168,76,.4);}
+    .btn-pop{
+      display:inline-flex;align-items:center;gap:10px;
+      background:linear-gradient(135deg,#FF6B6B,#FF8E53,#FFD93D);
+      background-size:200% 200%;
+      color:#fff;font-weight:800;font-size:15px;letter-spacing:.06em;
+      padding:16px 40px;border-radius:100px;
+      text-decoration:none;border:none;cursor:pointer;
+      box-shadow:0 6px 24px rgba(255,107,107,.45);
+      animation:popGrad 3s ease infinite;
+      transition:transform .3s,box-shadow .3s;
+      position:relative;overflow:hidden;
+    }
+    .btn-pop::after{
+      content:'→';font-size:18px;
+      transition:transform .3s;
+    }
+    .btn-pop:hover{transform:translateY(-5px) scale(1.04);box-shadow:0 14px 40px rgba(255,107,107,.6);}
+    .btn-pop:hover::after{transform:translateX(5px);}
+    @keyframes popGrad{
+      0%{background-position:0% 50%;}
+      50%{background-position:100% 50%;}
+      100%{background-position:0% 50%;}
+    }
     .btn-outline{
       background:transparent;
       color:var(--white);font-size:14px;
@@ -1357,7 +1380,7 @@
           <li>インフルエンサーとのコラボレーション</li>
           <li>バックダンサー・ステージパフォーマンス</li>
         </ul>
-        <a href="https://www.dance-basis.com/" target="_blank" class="btn-primary">HPはこちら</a>
+        <a href="https://www.dance-basis.com/" target="_blank" class="btn-pop">HPはこちら</a>
       </div>
     </div>
   </div>
@@ -1535,7 +1558,7 @@
           <li>ダンス衣装・グループウェアの大量生産</li>
           <li>素材・デザイン選びから納品まで一貫対応</li>
         </ul>
-        <a href="https://basis-shop.co.jp/" target="_blank" class="btn-primary">HPはこちら</a>
+        <a href="https://basis-shop.co.jp/" target="_blank" class="btn-pop">HPはこちら</a>
       </div>
     </div>
   </div>
@@ -1575,7 +1598,7 @@
           <li>個人に合ったプランニングと育成</li>
           <li>配信技術・収益化ノウハウの提供</li>
         </ul>
-        <a href="https://next-agent.jp/" target="_blank" class="btn-primary">HPはこちら</a>
+        <a href="https://next-agent.jp/" target="_blank" class="btn-pop">HPはこちら</a>
       </div>
     </div>
   </div>
