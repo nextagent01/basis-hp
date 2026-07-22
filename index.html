@@ -1541,11 +1541,11 @@
                   TikTok
                 </div>
                 <div class="influencer-stats">
-                  <div class="influencer-stat"><span class="influencer-stat-num">23</span><span class="influencer-stat-label">投稿数</span></div>
-                  <div class="influencer-stat"><span class="influencer-stat-num">7,800</span><span class="influencer-stat-label">フォロワー</span></div>
-                  <div class="influencer-stat"><span class="influencer-stat-num">1,700万+</span><span class="influencer-stat-label">総再生数</span></div>
+                  <div class="influencer-stat"><span class="influencer-stat-num" id="inf1-posts">23</span><span class="influencer-stat-label">投稿数</span></div>
+                  <div class="influencer-stat"><span class="influencer-stat-num" id="inf1-followers">7,800</span><span class="influencer-stat-label">フォロワー</span></div>
+                  <div class="influencer-stat"><span class="influencer-stat-num" id="inf1-views">1,700万+</span><span class="influencer-stat-label">総再生数</span></div>
                 </div>
-                <div class="influencer-stat-note">2026年7月現在</div>
+                <div class="influencer-stat-note" id="inf-updated">2026年7月現在</div>
               </div>
               <span class="influencer-arrow">→</span>
             </a>
@@ -1558,11 +1558,11 @@
                   Instagram
                 </div>
                 <div class="influencer-stats">
-                  <div class="influencer-stat"><span class="influencer-stat-num">88</span><span class="influencer-stat-label">投稿数</span></div>
-                  <div class="influencer-stat"><span class="influencer-stat-num">20,000</span><span class="influencer-stat-label">フォロワー</span></div>
-                  <div class="influencer-stat"><span class="influencer-stat-num">1,000万+</span><span class="influencer-stat-label">総再生数</span></div>
+                  <div class="influencer-stat"><span class="influencer-stat-num" id="inf2-posts">88</span><span class="influencer-stat-label">投稿数</span></div>
+                  <div class="influencer-stat"><span class="influencer-stat-num" id="inf2-followers">20,000</span><span class="influencer-stat-label">フォロワー</span></div>
+                  <div class="influencer-stat"><span class="influencer-stat-num" id="inf2-views">1,000万+</span><span class="influencer-stat-label">総再生数</span></div>
                 </div>
-                <div class="influencer-stat-note">2026年7月現在</div>
+                <div class="influencer-stat-note" id="inf2-updated">2026年7月現在</div>
               </div>
               <span class="influencer-arrow">→</span>
             </a>
@@ -1888,6 +1888,26 @@ window.addEventListener('mousemove',e=>{
   document.querySelector('.hero-orb2').style.transform=`translate(${cx*-20}px,${cy*-15}px)`;
   document.querySelector('.hero-orb3').style.transform=`translate(${cx*15}px,${cy*25}px)`;
 });
+</script>
+<script>
+fetch('numbers.json?v=' + Date.now())
+  .then(r => r.json())
+  .then(data => {
+    const inf = data.influencers;
+    if (inf[0]) {
+      document.getElementById('inf1-posts').textContent = inf[0].posts;
+      document.getElementById('inf1-followers').textContent = inf[0].followers;
+      document.getElementById('inf1-views').textContent = inf[0].views;
+      document.getElementById('inf-updated').textContent = data.updated + '現在';
+    }
+    if (inf[1]) {
+      document.getElementById('inf2-posts').textContent = inf[1].posts;
+      document.getElementById('inf2-followers').textContent = inf[1].followers;
+      document.getElementById('inf2-views').textContent = inf[1].views;
+      document.getElementById('inf2-updated').textContent = data.updated + '現在';
+    }
+  })
+  .catch(() => {});
 </script>
 </body>
 </html>
